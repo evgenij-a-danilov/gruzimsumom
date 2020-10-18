@@ -20,28 +20,27 @@ import java.util.List;
 @RequestMapping("/orders")
 public class OrderController {
 
-
-
     @Autowired
     private OrderDAO orderDAO;
 
     @GetMapping()
-    public List<Order> getOrder() {
+    public List<Order> getOrders() {
         List<Order> orderList = orderDAO.getOrders();
+        return orderList;
+    }
+
+    @GetMapping("/showLastOrderID")
+    public long getLastOrderId() {
+        long orderList = orderDAO.getOrderByID("1");
 
         return orderList;
     }
 
-    @GetMapping("/{id}")
-    public String getLastOrderId(@PathVariable("id") String id) {
-        String orderList = orderDAO.getOrderByID(id);
-
-        return orderList;
-    }
+}
 
 //    @RequestMapping("/")
 //    public String index() {
 //        return "Greetings from Spring Boot!";
 //    }
 
-}
+

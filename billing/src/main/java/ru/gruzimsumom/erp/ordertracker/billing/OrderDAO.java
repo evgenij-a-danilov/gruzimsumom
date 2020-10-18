@@ -42,13 +42,13 @@ public class OrderDAO extends JdbcDaoSupport {
 
 
 
-    public String getOrderByID(String s) {
+    public long getOrderByID(String s) {
 
         String sql = "SELECT max(ID) FROM public.orders where id > '"+s+"'";
-        String lastCreatedId = getJdbcTemplate().queryForObject(sql, String.class);
-
+        Number lastCreatedId = getJdbcTemplate().queryForObject(sql, Long.class);
         System.out.print("lastCreatedId:   "+lastCreatedId);
-        return lastCreatedId;
+
+        return (lastCreatedId != null ? lastCreatedId.longValue() : 0);
     }
 
     public List<Order> getAllOrderRowMapper(){
