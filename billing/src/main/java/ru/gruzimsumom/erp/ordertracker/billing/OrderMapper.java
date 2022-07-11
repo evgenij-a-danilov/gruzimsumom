@@ -6,7 +6,8 @@ import org.springframework.jdbc.core.RowMapper;
 import ru.gruzimsumom.erp.ordertracker.billing.Order;
 
 // планирую импортировать пакет с обертками
-//import gruzimsumom.wrapper_package 
+//import gruzimsumom._gruzimsumom_wrapper
+//import gruzimsumom._gruzimsumom_test
 
 public class OrderMapper implements RowMapper<Order> {
 
