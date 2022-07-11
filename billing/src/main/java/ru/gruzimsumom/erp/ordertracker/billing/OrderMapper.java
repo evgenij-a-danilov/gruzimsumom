@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 import ru.gruzimsumom.erp.ordertracker.billing.Order;
 
+// планирую импортировать пакет с обертками
+//import gruzimsumom.wrapper_package 
+
 public class OrderMapper implements RowMapper<Order> {
 
     public Order mapRow(ResultSet rs, int rowNum) throws SQLException {
